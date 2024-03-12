@@ -1,33 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.container,
+.mini-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Small */
+@media (min-width: 768px) {
+  .container,
+  .mini-container {
+    width: 750px;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Medium */
+@media (min-width: 992px) {
+  .container,
+  .mini-container {
+    width: 970px;
   }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container,
+  .mini-container {
+    width: 1170px;
+  }
+}
+/* Extra Large */
+@media (min-width: 1400px) {
+  .container {
+    width: 1525px;
+  }
+  .mini-container {
+    width: 1070px;
+  }
+}
+.hero-heading {
+  text-shadow: 1px 1px 1px #000000;
+}
+.our-app {
+  text-shadow: 1px 1px 1px #0000005c;
+}
+.box-shadow {
+  box-shadow: 1px 1px 15px -5px #000000;
+}
+.heading2 {
+  @apply md:text-3xl text-2xl lg:text-4xl xl:text-5xl font-semibold;
+}
+.resBanner {
+  aspect-ratio: 10/6;
 }
