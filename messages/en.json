@@ -3,53 +3,53 @@
     "locale": "en"
   },
   "header": {
-    "main": "الرئيسة",
-    "restaurants_menu": "قائمة المطاعم",
-    "our_app": "تطبيقنا",
-    "join_us_as_restaurant": "انضم إلينا كمطعم",
-    "join_us_as_driver": "انضم إلينا كسائق",
-    "contact_us": "اتصل بنا"
+    "main": "Home",
+    "restaurants_menu": "Restaurants Menu",
+    "our_app": "Our App",
+    "join_us_as_restaurant": "Join Us as a Restaurant",
+    "join_us_as_driver": "Join Us as a Driver",
+    "contact_us": "Contact Us"
   },
   "hero": {
-    "title": "أكثر من ٢٠٠٠٠ مطعم اطلب واكلك يوصلك لين باب بيتك"
+    "title": "Over 20,000 restaurants - order and get your food delivered right to your doorstep"
   },
   "features": {
-    "feat_1_title": "تجربة الشحن الشخصية",
-    "feat_2_title": "80% من مطاعم السعودية",
-    "feat_3_title": "مدفوعات آمنة",
-    "feat_1_description": "تحكم في تجارب التسليم الخاصة بك في الوقت الفعلي من خلال محادثة مفتوحة مع شركة التوصيل الخاصة بك",
-    "feat_2_description": "يمكنك الوصول إلى 80% من مطاعم الوجبات السريعة في المملكة في متناول يدك. استمتع براحة الإشباع السريع حيث نقدم لك عددًا لا يحصى من خيارات الوجبات السريعة.",
-    "feat_3_description": "اختبر ثقة المعاملات الآمنة. تعطي منصتنا الأولوية لسلامة تفاعلاتك المالية، وذلك باستخدام أحدث الإجراءات الأمنية لحماية مدفوعاتك."
+    "feat_1_title": "Personalized Delivery Experience",
+    "feat_2_title": "80% of Saudi Restaurants",
+    "feat_3_title": "Secure Payments",
+    "feat_1_description": "Control your delivery experiences in real time with open conversation with your delivery company",
+    "feat_2_description": "Access 80% of the Kingdom's fast-food restaurants at your fingertips. Enjoy the comfort of quick gratification as we offer you countless fast-food options.",
+    "feat_3_description": "Experience the confidence of secure transactions. Our platform prioritizes the safety of your financial interactions, using the latest security measures to protect your payments."
   },
   "restaurantsMenu": {
-    "title": "قائمة المطاعم"
+    "title": "Restaurants Menu"
   },
   "ourApp": {
-    "title": "تطبيق الجوال",
-    "desc": "حمل تطبيق توصيلي على جوالك واطلب بضغطة زر"
+    "title": "Mobile App",
+    "desc": "Download our delivery app on your mobile and order with a click of a button"
   },
   "joinUs": {
-    "title": "إنظم إلينا",
-    "restaurant": "انظم الينا كمطعم و زد ارباحك",
-    "driver": "انظم الينا كسائق و زد ارباحك",
-    "join_now": "إنظم الان"
+    "title": "Join Us",
+    "restaurant": "Join us as a restaurant and increase your profits",
+    "driver": "Join us as a driver and increase your profits",
+    "join_now": "Join Now"
   },
   "contact": {
-    "heading": "ضع معلوماتك هنا وسنقوم بالتواصل معك...",
-    "first_name": "الاسم الأول",
-    "second_name": "الاسم الثاني",
-    "email": "البريد الإلكتروني",
-    "message": "الرسالة",
-    "phone": "رقم الجوال",
-    "submit": "إرسال"
+    "heading": "Put your information here and we will contact you...",
+    "first_name": "First Name",
+    "second_name": "Second Name",
+    "email": "Email",
+    "message": "Message",
+    "phone": "Phone Number",
+    "submit": "Submit"
   },
   "clientsReview": {
-    "title": "آراء العملاء"
+    "title": "Client Reviews"
   },
   "mainService": {
-    "desc": "اشترك فى النشرة الاسبوعية لمتابعة أحدث المنتجات",
-    "title": "اشترك في النشرة البريدية الآن واحصل على خصومات رائعة",
-    "button": "اشترك الأن",
-    "mail": "بريد الكتروني"
+    "desc": "Subscribe to the weekly newsletter to follow the latest products",
+    "title": "Subscribe to our newsletter now and get great discounts",
+    "button": "Subscribe Now",
+    "mail": "Email"
   }
 }
