@@ -50,6 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+  //
   unstable_setRequestLocale(params.locale);
   const messages = useMessages();
 
