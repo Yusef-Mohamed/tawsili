@@ -25,7 +25,11 @@ const MobileMenu = () => {
       >
         <FaBars />
       </button>
-      <Sheet isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
+      <Sheet
+        withClose={true}
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      >
         <nav>
           {navLinks.map((link) => (
             <HeaderLink
@@ -40,7 +44,7 @@ const MobileMenu = () => {
           <Link
             className={linksClasses}
             onClick={() => setIsMenuOpen(false)}
-            href={"/"}
+            href={"/login"}
           >
             <FaRegUser />
           </Link>

@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        "bg-main-red font-semibold text-white px-6 py-4",
+        "bg-main-red font-semibold text-white px-6 py-3",
         className,
         {
           "rounded-full": isRounded,

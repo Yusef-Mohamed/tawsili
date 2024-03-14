@@ -8,6 +8,7 @@ interface SheetProps {
   isOpen: boolean;
   onClose: () => void;
   className?: ClassNameValue;
+  withClose?: boolean;
 }
 
 export const Sheet: React.FC<SheetProps> = ({
@@ -15,6 +16,7 @@ export const Sheet: React.FC<SheetProps> = ({
   isOpen,
   onClose,
   className,
+  withClose,
 }) => {
   return (
     <AnimatePresence mode="wait">
@@ -32,17 +34,20 @@ export const Sheet: React.FC<SheetProps> = ({
             animate={{ translateX: "0" }}
             exit={{ translateX: "100%", transition: { duration: 0.2 } }}
             className={cn(
-              className,
-              "h-full pt-10 px-4 bg-background-50 min-w-[250px] md:min-w-[300px] lg:w-[600px] bg-white text-black  relative"
+              "min-h-screen max-h-screen overflow-y-auto pt-10 px-4 bg-background-50 min-w-[250px] md:min-w-[300px] lg:w-[600px] bg-white text-black  relative",
+              className
             )}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={onClose}
-              className="absolute top-2 text-text-900 left-2 flex items-center justify-center border border-border rounded-full w-8 h-8 hover:bg-text-900 hover:text-background-50 transition-all"
-            >
-              <IoClose />
-            </button>
+            {withClose && (
+              <button
+                onClick={onClose}
+                className="absolute top-2 text-text-900 left-2 flex items-center justify-center border border-border rounded-full w-8 h-8 hover:bg-text-900 hover:text-background-50 transition-all"
+              >
+                <IoClose />
+              </button>
+            )}
+
             {children}
           </motion.div>
           <div className="w-full h-full cursor-pointer" onClick={onClose} />

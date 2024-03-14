@@ -12,10 +12,11 @@ const OurApp = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="py-8 my-8 aspect-[7/7] sm:aspect-[12/7] md:aspect-[15/7] lg:aspect-[17/7] flex items-center "
+      className="py-8 my-8 aspect-[7/7] relative sm:aspect-[12/7] md:aspect-[15/7] lg:aspect-[17/7] flex items-center "
     >
+      <div className="bg-white bg-opacity-35 absolute w-full h-full inset-0" />
       <div className="container our-app ">
-        <div className="max-w-[550px]">
+        <div className="max-w-[550px] relative">
           <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl  xl:text-7xl">
             {text("title")}
           </h2>

@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import { MdClose } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -28,21 +28,15 @@ export const Modal: React.FC<ModalProps> = ({
           onClick={onClose}
         >
           <motion.div
-            initial={{ scale: 0, rotate: 30 }}
-            animate={{ scale: 1, rotate: 0 }}
-            exit={{ scale: 0, transition: { duration: 0.2 }, rotate: 30 }}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0, transition: { duration: 0.2 } }}
             className={cn(
-              "bg-[white] max-h-[90vh] overflow-auto p-4 w-96 relative rounded-xl",
+              "bg-[white] max-h-[90vh] overflow-auto p-4 w-96 rounded-xl",
               className
             )}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={onClose}
-              className="flex items-center justify-center border border-border rounded-full w-8 h-8 hover:bg-text-900 hover:text-background-50 transition-all"
-            >
-              <MdClose />
-            </button>
             {children}
           </motion.div>
         </motion.div>

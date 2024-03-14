@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .container,
 .mini-container {
   padding-left: 15px;
@@ -41,7 +42,8 @@
   text-shadow: 1px 1px 1px #000000;
 }
 .our-app {
-  text-shadow: 1px 1px 1px #0000005c;
+  text-shadow: 1px 1px 1px #5f5e5e;
+  font-weight: 600;
 }
 .box-shadow {
   box-shadow: 1px 1px 15px -5px #000000;
@@ -51,4 +53,40 @@
 }
 .resBanner {
   aspect-ratio: 10/6;
+}
+.formPage {
+  @apply min-h-screen pb-16 flex items-center justify-center;
+}
+.err {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+input:invalid {
+  display: block;
+}
+.leaflet-container {
+  @apply h-64 w-full;
+  cursor: pointer !important;
+}
+
+html[lang="en"] .arOnly {
+  display: none;
+}
+html[lang="ar"] .enOnly {
+  display: none;
+}
+.tableContainer {
+  @apply overflow-x-auto max-w-full rounded-xl w-full border;
+}
+.tableContainer .table {
+  @apply w-full text-center;
+}
+.tableContainer .table td,
+.tableContainer .table th {
+  @apply whitespace-nowrap py-4;
+}
+.tableContainer tr {
+  @apply border-b;
 }

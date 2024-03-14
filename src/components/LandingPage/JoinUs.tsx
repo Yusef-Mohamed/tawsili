@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
 import SectionHeading from "../ui/section-heading";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
+
 const cards = [
   {
     title: "restaurant",

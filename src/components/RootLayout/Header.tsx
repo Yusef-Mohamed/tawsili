@@ -3,12 +3,12 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
-import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import LangChanger from "./LangChanger";
 import MobileMenu from "./MobileMenu";
 import { navLinks } from "@/constants";
 import HeaderLink from "./HeaderLink";
+import { Link } from "@/navigation";
 
 const RootHeader = () => {
   const header = useTranslations("header");
@@ -23,6 +23,7 @@ const RootHeader = () => {
   };
 
   useEffect(() => {
+    checkScroll();
     window.addEventListener("scroll", checkScroll);
     return () => {
       window.removeEventListener("scroll", checkScroll);
@@ -54,7 +55,9 @@ const RootHeader = () => {
           <div className="flex gap-6 items-center">
             <LangChanger />
             <IoSearchOutline />
-            <FaRegUser />
+            <Link href="/login">
+              <FaRegUser />
+            </Link>
           </div>
         </div>
         <MobileMenu />

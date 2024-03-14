@@ -2,54 +2,170 @@
   "common": {
     "locale": "en"
   },
-  "header": {
-    "main": "Home",
-    "restaurants_menu": "Restaurants Menu",
-    "our_app": "Our App",
-    "join_us_as_restaurant": "Join Us as a Restaurant",
-    "join_us_as_driver": "Join Us as a Driver",
-    "contact_us": "Contact Us"
+  "advertisements": {
+    "campaign_cost": "Campaign Cost",
+    "campaign_name": "Campaign Name",
+    "campaign_status": "Campaign Status",
+    "adds_campaigns": "Ads Campaigns",
+    "meals_adds": "Meal Ads",
+    "meals_adds_paragraph": "Advertisements for restaurant meals",
+    "restaurant_adds": "Restaurant Ads",
+    "restaurant_adds_paragraph": "Advertisements for the restaurant",
+    "actions": "Actions",
+    "target_cites": "Target Cities"
   },
-  "hero": {
-    "title": "Over 20,000 restaurants - order and get your food delivered right to your doorstep"
-  },
-  "features": {
-    "feat_1_title": "Personalized Delivery Experience",
-    "feat_2_title": "80% of Saudi Restaurants",
-    "feat_3_title": "Secure Payments",
-    "feat_1_description": "Control your delivery experiences in real time with open conversation with your delivery company",
-    "feat_2_description": "Access 80% of the Kingdom's fast-food restaurants at your fingertips. Enjoy the comfort of quick gratification as we offer you countless fast-food options.",
-    "feat_3_description": "Experience the confidence of secure transactions. Our platform prioritizes the safety of your financial interactions, using the latest security measures to protect your payments."
-  },
-  "restaurantsMenu": {
-    "title": "Restaurants Menu"
-  },
-  "ourApp": {
-    "title": "Mobile App",
-    "desc": "Download our delivery app on your mobile and order with a click of a button"
-  },
-  "joinUs": {
-    "title": "Join Us",
-    "restaurant": "Join us as a restaurant and increase your profits",
-    "driver": "Join us as a driver and increase your profits",
-    "join_now": "Join Now"
+  "analysis": {
+    "branch": "Branch",
+    "branches_count": "Number of Branches Today",
+    "compensation": "Compensations Today",
+    "friday": "Friday",
+    "monday": "Monday",
+    "sunday": "Sunday",
+    "net_profit": "Net Profit in Saudi Riyals",
+    "net_sales": "Net Sales Today",
+    "order": "Order",
+    "orders_count": "Number of Orders Today",
+    "real": "SAR",
+    "saturday": "Saturday",
+    "title": "Analytics and Statistics",
+    "thursday": "Thursday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "weakly_net_profit": "Weekly Net Profit"
   },
   "contact": {
-    "heading": "Put your information here and we will contact you...",
-    "first_name": "First Name",
-    "second_name": "Second Name",
     "email": "Email",
+    "first_name": "First Name",
+    "heading": "Enter Your Information Here and We Will Get in Touch with You...",
+    "last_name": "Last Name",
     "message": "Message",
     "phone": "Phone Number",
     "submit": "Submit"
   },
-  "clientsReview": {
-    "title": "Client Reviews"
+  "dashboard": {
+    "coming_soon": "Coming Soon... Developing a Reward System for Restaurant Customers"
+  },
+  "dashboardHeader": {
+    "hello_paragraph": "Hello, Have a Good Day,",
+    "management": "Management",
+    "search": "Search"
+  },
+  "dashboardSidebar": {
+    "advertisements": "Advertisements",
+    "branches": "Branches",
+    "branches_time": "Branches Time",
+    "budget": "Budget",
+    "dashboard": "Dashboard",
+    "logout": "Logout",
+    "meals": "Meals"
+  },
+  "features": {
+    "feat_1_description": "Control your delivery experiences in real-time through an open conversation with your delivery company.",
+    "feat_1_title": "Personalized Delivery Experience",
+    "feat_2_description": "Access 80% of fast-food restaurants in the Kingdom at your fingertips. Enjoy the convenience of quick satisfaction as we offer you countless fast-food options.",
+    "feat_2_title": "80% of Saudi Restaurants",
+    "feat_3_description": "Experience secure transaction confidence. Our platform prioritizes the safety of your financial interactions, utilizing the latest security measures to protect your payments.",
+    "feat_3_title": "Secure Payments"
+  },
+  "header": {
+    "contact_us": "Contact Us",
+    "join_us_as_driver": "Join Us as Driver",
+    "join_us_as_restaurant": "Join Us as Restaurant",
+    "main": "Home",
+    "our_app": "Our App",
+    "restaurants_menu": "Restaurants Menu"
+  },
+  "hero": {
+    "title": "More than 20,000 restaurants. Order and your meal will be delivered to your doorstep."
+  },
+  "inputs": {
+    "password": "Password",
+    "restaurant": "Restaurant",
+    "accounting_email": "Accounting and Finance Management Email",
+    "beneficiary_name": "Beneficiary Name",
+    "branch_name": "Branch Name",
+    "client": "Client",
+    "country": "Country",
+    "email": "Email",
+    "email_placeholder": "example@mail.com",
+    "enter_password": "Enter Password",
+    "fast_food": "Fast Food",
+    "from": "From",
+    "IBANFile": "IBAN File",
+    "late": "Latitude",
+    "long": "Longitude",
+    "login_to": "Login to",
+    "management_contact_number": "Management Contact Number",
+    "management_email": "Management Email",
+    "marketing_contact_number": "Marketing Contact Number",
+    "marketing_email": "Marketing Email",
+    "must_add_one_branch_at_least": "At least one branch must be added",
+    "name": "Name",
+    "national_address": "National Address",
+    "phone": "Phone Number",
+    "required_input": "This field is required",
+    "restaurant_arabic_name": "Restaurant Name in Arabic",
+    "restaurant_english_name": "Restaurant Name in English",
+    "restaurant_logo": "Restaurant Logo",
+    "restaurant_logo_placeholder": "Upload Logo",
+    "restaurant_menu": "Restaurant Menu, Prices, and Calories",
+    "restaurant_menu_placeholder": "Upload Restaurant Menu, Prices, and Calories",
+    "restaurant_type": "Restaurant Type",
+    "select_one": "Select One",
+    "to": "To",
+    "upload_pdf": "Upload PDF File"
+  },
+  "joinUs": {
+    "driver": "Join us as a driver and increase your profits",
+    "join_now": "Join Now",
+    "restaurant": "Join us as a restaurant and increase your profits",
+    "title": "Join Us"
+  },
+  "joinUsPage": {
+    "payment_info": "Payment Information",
+    "actions": "Actions",
+    "add": "Add",
+    "as_restaurant": "Join as Restaurant",
+    "branch_name": "Branch Name",
+    "branches_info": "Branches Information",
+    "country": "Country",
+    "joining_done": "Registration Complete",
+    "joining_done_desc": "We will be in touch with you soon...!",
+    "long_error": "Error in longitude value",
+    "management_contact_number": "Management Contact Number",
+    "management_email": "Management Email",
+    "marketing_contact_number": "Marketing Contact Number",
+    "marketing_email": "Marketing Email",
+    "must_add_one_branch_at_least": "At least one branch must be added",
+    "next": "Next",
+    "no_hospitals": "Stores located within hospitals cannot be added",
+    "no_malls": "Stores located within commercial malls cannot be added",
+    "no_military": "Restricted areas such as residential compounds, military zones, and embassies",
+    "our_terms": "Dear Partner, Please be informed that our application cannot cover the following locations:",
+    "please_select_location": "Please select your location from the map",
+    "public_info": "General Information",
+    "select_country_paragraph": "Select the country to appear on the map and make it easier for you to choose your location",
+    "user_info": "User Information",
+    "save": "Save"
+  },
+  "loginPage": {
+    "login": "Login",
+    "remember_me": "Remember Me"
   },
   "mainService": {
-    "desc": "Subscribe to the weekly newsletter to follow the latest products",
-    "title": "Subscribe to our newsletter now and get great discounts",
     "button": "Subscribe Now",
-    "mail": "Email"
+    "desc": "Subscribe to our weekly newsletter to stay updated on the latest products.",
+    "mail": "Email",
+    "title": "Subscribe to the Newsletter Now and Get Great Discounts"
+  },
+  "ourApp": {
+    "desc": "Download our delivery app on your phone and order with a click of a button.",
+    "title": "Mobile App"
+  },
+  "restaurantsMenu": {
+    "title": "Restaurants Menu"
+  },
+  "clientsReview": {
+    "title": "Customer Reviews"
   }
 }

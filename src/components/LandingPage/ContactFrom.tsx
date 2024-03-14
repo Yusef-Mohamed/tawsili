@@ -7,13 +7,13 @@ const ContactFrom = () => {
     <section className="mini-container py-8">
       <h2 className="text-center heading2 mb-16">{text("heading")}</h2>
       <form className="space-y-6">
-        <div className="md:grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <input
             placeholder={text("first_name")}
             className="text-black bg-main-gray w-full px-6 py-4 placeholder:text-black text-lg font-semibold"
           />{" "}
           <input
-            placeholder={text("second_name")}
+            placeholder={text("last_name")}
             className="text-black bg-main-gray w-full px-6 py-4 placeholder:text-black text-lg font-semibold"
           />
         </div>
