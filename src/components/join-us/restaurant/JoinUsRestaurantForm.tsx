@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import "leaflet/dist/leaflet.css";
 import { UserInfoStep } from "./UserInfoStep";
 import { PublicInfoStep } from "./PublicInfoStep";
 import { PaymentInfoStep } from "./PaymentInfoStep";

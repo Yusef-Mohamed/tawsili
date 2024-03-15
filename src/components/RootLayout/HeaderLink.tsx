@@ -14,18 +14,7 @@ const HeaderLink: React.FC<HeaderLinkProps> = ({
   fn,
 }) => {
   return (
-    <Link
-      href={"/"}
-      className={className}
-      onClick={(e) => {
-        e.preventDefault();
-        if (fn) fn();
-        const element = document.getElementById(href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }}
-    >
+    <Link href={href} className={className}>
       {children}
     </Link>
   );

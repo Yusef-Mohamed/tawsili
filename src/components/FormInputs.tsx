@@ -19,7 +19,14 @@ const FormInputs: React.FC<FormInputsProps> = ({ inputs, setData }) => {
   return (
     <>
       {inputs.map((input, index) => {
-        return <FormInput key={index} input={input} setData={setData} />;
+        return (
+          <FormInput
+            key={index}
+            input={input}
+            className={input.className}
+            setData={setData}
+          />
+        );
       })}
     </>
   );

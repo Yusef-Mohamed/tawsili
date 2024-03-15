@@ -20,7 +20,7 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({ link }) => {
         `w-full flex items-center gap-2  transition-all bg-main-gray hover:bg-main-red hover:text-white font-semibold text-lg py-4 px-6 rounded-md`,
         className,
         {
-          "bg-main-red text-white": pathName === to,
+          "bg-main-red text-white": pathName.split("/")[2] === to.split("/")[2],
         }
       )}
     >

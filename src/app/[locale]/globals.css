@@ -78,15 +78,36 @@ html[lang="ar"] .enOnly {
   display: none;
 }
 .tableContainer {
-  @apply overflow-x-auto max-w-full rounded-xl w-full border;
+  @apply w-full max-w-full overflow-auto border rounded-md;
 }
+
 .tableContainer .table {
-  @apply w-full text-center;
+  @apply max-w-full w-full text-center;
 }
 .tableContainer .table td,
 .tableContainer .table th {
-  @apply whitespace-nowrap py-4;
+  @apply whitespace-nowrap py-4 px-2;
 }
 .tableContainer tr {
   @apply border-b;
+}
+
+main {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+}
+@media (min-width: 1280px) {
+  main {
+    width: calc(100vw - 450px);
+    max-width: calc(100vw - 450px);
+    overflow: hidden;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    width: calc(100vw - 300px);
+    max-width: calc(100vw - 300px);
+    overflow: hidden;
+  }
 }

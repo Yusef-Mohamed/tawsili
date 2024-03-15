@@ -17,13 +17,12 @@ export default function RootLayout({
       <DashboardHeader />
       <div className="flex">
         <DashboardSidebar />
-
-        <div className="flex-1">
+        <main className="flex-1">
           <p className="py-2 bg-main-red mb-6 text-white text-lg text-center">
             {text("coming_soon")}
           </p>
-          {children}
-        </div>
+          <div className="px-6">{children}</div>
+        </main>
       </div>
     </>
   );

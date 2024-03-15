@@ -6,6 +6,7 @@ import { PaymentInfoInputs } from "./constants";
 import Button from "@/components/ui/button";
 import { useMemo, useState } from "react";
 import { Modal } from "@/components/ui/modal";
+import { Link } from "@/navigation";
 
 export const PaymentInfoStep: React.FC<StepProps> = ({
   setData,
@@ -53,13 +54,13 @@ export const PaymentInfoStep: React.FC<StepProps> = ({
           {text("joining_done_desc")}
         </p>
 
-        <Button
-          isRounded
-          className="block mt-6 w-3/4 mx-auto"
+        <Link
+          href="/"
+          className="block mt-6 w-3/4 mx-auto bg-main-red font-semibold text-white px-6 py-3 rounded-full"
           onClick={() => setCurrentStep(currentStep + 1)}
         >
           {text("done")}
-        </Button>
+        </Link>
       </Modal>
     </>
   );

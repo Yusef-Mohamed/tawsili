@@ -9,8 +9,11 @@ import MobileMenu from "./MobileMenu";
 import { navLinks } from "@/constants";
 import HeaderLink from "./HeaderLink";
 import { Link } from "@/navigation";
-
-const RootHeader = () => {
+import { cn } from "@/lib/utils";
+interface RootHeaderProps {
+  isStatic?: boolean;
+}
+const RootHeader: React.FC<RootHeaderProps> = ({ isStatic }) => {
   const header = useTranslations("header");
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -23,6 +26,7 @@ const RootHeader = () => {
   };
 
   useEffect(() => {
+    if (isStatic) return;
     checkScroll();
     window.addEventListener("scroll", checkScroll);
     return () => {
@@ -33,17 +37,22 @@ const RootHeader = () => {
     <header
       style={{
         backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "transparent",
+        color: isStatic ? "black" : "white",
       }}
-      className="fixed right-0 top-0 z-10 w-full text-white transition-all"
+      className={cn(` w-full text-white transition-all`, {
+        "fixed right-0 top-0 z-10": !isStatic,
+      })}
     >
       <div className="flex justify-between container mx-auto items-center gap-8">
-        <Image
-          src="/logo.png"
-          alt="logo"
-          className="transition-all"
-          width={isScrolled ? 150 : 200}
-          height={isScrolled ? 105 : 140}
-        />
+        <Link href={"/"}>
+          <Image
+            src="/logo.png"
+            alt="logo"
+            className="transition-all"
+            width={isScrolled ? 150 : 200}
+            height={isScrolled ? 105 : 140}
+          />
+        </Link>
         <div className="lg:flex gap-8 items-center hidden">
           <nav className="flex items-center lg:gap-4 xl:gap-8">
             {navLinks.map((link) => (

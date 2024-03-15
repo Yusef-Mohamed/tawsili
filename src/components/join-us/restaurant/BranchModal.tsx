@@ -15,11 +15,10 @@ import { useTranslations } from "next-intl";
 import { Modal } from "@/components/ui/modal";
 import Button from "@/components/ui/button";
 import countries from "world-countries";
+import "leaflet/dist/leaflet.css";
 
 interface BranchModalProps {
-  setData: (
-    updateFunction: (prev: IJoinUsRestaurantForm) => IJoinUsRestaurantForm
-  ) => void;
+  onSubmit: (value: IBranch) => void;
   branch: IBranch;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
@@ -59,21 +58,14 @@ const LocationMarker: React.FC<LocationMarkerProps> = ({
 const BranchModal: React.FC<BranchModalProps> = ({
   branch,
   isModalOpen,
-  setData,
+  onSubmit,
   setIsModalOpen,
 }) => {
   const text = useTranslations("joinUsPage");
   const [newBranch, setNewBranch] = useState<IBranch>(branch);
   const handelUpdateBranch = () => {
     if (newBranch) {
-      setData((prev) => {
-        const newData = prev;
-        const index = newData.branches.findIndex(
-          (branch) => branch.id === newBranch.id
-        );
-        newData.branches[index] = newBranch;
-        return newData;
-      });
+      onSubmit(newBranch);
       setIsModalOpen(false);
     }
   };
@@ -115,7 +107,11 @@ const BranchModal: React.FC<BranchModalProps> = ({
         />
         <LocationMarker
           setPosition={(data: number[]) => {
-            setNewBranch((prev) => ({ ...prev, late: data[0], long: data[1] }));
+            setNewBranch((prev) => ({
+              ...prev,
+              late: data[0],
+              long: data[1],
+            }));
           }}
           position={[newBranch.late, newBranch.long]}
         />

@@ -7,7 +7,7 @@ const DashboardHeader = () => {
   const text = useTranslations("dashboardHeader");
   return (
     <header className="flex lg:justify-normal border-b justify-between px-8 lg:px-0">
-      <div className="flex items-center justify-center lg:w-[450px] lg:border-e">
+      <div className="flex items-center justify-center lg:w-[350px] xl:w-[450px] lg:border-e">
         <Image
           src="/logo.png"
           alt="logo"

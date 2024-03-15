@@ -42,14 +42,14 @@ const Page = ({ params }: { params: { locale: string } }) => {
   unstable_setRequestLocale(params.locale);
   const text = useTranslations("analysis");
   return (
-    <main>
-      <h2 className="px-6 text-2xl font-semibold">{text("title")}</h2>
-      <div className="grid px-6 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+    <>
+      <h2 className=" text-2xl font-semibold">{text("title")}</h2>
+      <div className="grid  md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
         {cards.map((card, index) => (
           <AnalysisCard key={index} card={card} />
         ))}
       </div>
-      <h2 className="mt-4 px-6 text-2xl font-semibold">
+      <h2 className="mt-4  text-2xl font-semibold">
         {text("weakly_net_profit")}
       </h2>
       <div className="overflow-hidden mx-auto w-[85vw] sm:w-auto  sm:mx-6 p-4 sm:p-8 border rounded-xl mt-8">
@@ -68,7 +68,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
         </div>
         <AnalysisCharts />
       </div>
-    </main>
+    </>
   );
 };
 

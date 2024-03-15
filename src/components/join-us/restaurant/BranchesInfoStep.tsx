@@ -1,4 +1,5 @@
 "use client";
+
 import Button from "@/components/ui/button";
 import { IBranch, StepProps } from "@/types";
 import { useState } from "react";
@@ -33,7 +34,16 @@ export const BranchesInfoStep: React.FC<StepProps> = ({
     <>
       {selectedBranch && isModalOpen && (
         <BranchModal
-          setData={setData}
+          onSubmit={(newBranch) => {
+            setData((prev) => {
+              return {
+                ...prev,
+                branches: prev.branches.map((branch: IBranch) =>
+                  branch.id === newBranch.id ? newBranch : branch
+                ),
+              };
+            });
+          }}
           branch={selectedBranch}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}

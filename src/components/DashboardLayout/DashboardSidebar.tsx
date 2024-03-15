@@ -49,8 +49,8 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isMenu }) => {
         <Image src={"/temp/restaurante2.jpg"} fill alt="banner" />
       </div>
       <div className="px-8">
-        <div className="flex items-center gap-4 -translate-y-1/3">
-          <div className="aspect-square rounded-full overflow-hidden w-1/3 relative">
+        <div className="flex items-center gap-4 -translate-y-1/4">
+          <div className="aspect-square rounded-full overflow-hidden sm:w-32  sm:h-32 w-24 h-24 relative">
             <Image src={"/temp/restauranteLogo2.png"} fill alt="banner" />
           </div>
           <h2 className="text-3xl font-semibold">ماكدونالدز</h2>

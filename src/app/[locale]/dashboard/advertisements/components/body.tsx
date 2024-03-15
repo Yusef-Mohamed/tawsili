@@ -1,5 +1,7 @@
 "use client";
+import Switch from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
@@ -29,12 +31,12 @@ const AddsBody = () => {
   return (
     <>
       <h2 className="text-2xl font-semibold">{text("restaurant_adds")}</h2>
-      <div className="flex my-8 gap-8">
+      <div className="flex my-8 gap-4 sm:gap-8">
         {options.map((option, index) => (
           <button
             key={index}
             className={cn(
-              "border px-8 py-4 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all",
+              "border px-4 sm:px-8 py-2 sm:py-4 sm:w-auto w-1/2 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all",
               {
                 "text-main-red font-semibold": selected.value === option.value,
                 "bg-gray-100 text-gray-600": selected.value !== option.value,
@@ -45,6 +47,14 @@ const AddsBody = () => {
             {text(option.name)}
           </button>
         ))}
+        <Link
+          href={"/dashboard/advertisements/new"}
+          className={cn(
+            "border px-4 sm:px-8 py-2 sm:py-4 sm:w-auto w-1/2 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all"
+          )}
+        >
+          {text("make_new_campaign")}
+        </Link>
       </div>
       <h2 className="mt-4 text-2xl font-semibold">{text(selected.name)}</h2>
       <p className="my-4">{text(selected.selectedParagraph)}</p>
@@ -66,9 +76,7 @@ const AddsBody = () => {
                 <td>{campaign.cost}</td>
                 <td>{campaign.cites}</td>
                 <td>
-                  <button className="h-6 bg-main-gray flex items-center mx-auto w-12 rounded-full">
-                    <div className="h-6 w-6 bg-green-400 rounded-full" />
-                  </button>
+                  <Switch checked={true} onChange={() => {}} />
                 </td>
                 <td>
                   <div>

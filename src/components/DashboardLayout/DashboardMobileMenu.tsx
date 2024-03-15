@@ -27,7 +27,7 @@ const DashboardMobileMenu = () => {
       </button>
       <Sheet
         isOpen={isMenuOpen}
-        className="px-0 py-0"
+        className="px-0 py-0 w-[90%] max-w-[90%] min-w-[90%]"
         onClose={() => setIsMenuOpen(false)}
       >
         <DashboardSidebar isMenu />
