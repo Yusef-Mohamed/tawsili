@@ -40,7 +40,7 @@ const MealForm = () => {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-    setData({ ...data, image: file });
+    setData((prev) => ({ ...prev, image: file }));
   };
   const text = useTranslations("mealForm");
   return (
@@ -52,7 +52,7 @@ const MealForm = () => {
         <input
           type="text"
           placeholder={text("meal_name")}
-          className="w-80 py-3 px-6 bg-main-gray rounded-md"
+          className=" w-full md:w-80 py-3 px-6 bg-main-gray rounded-md"
         />
       </div>
       <div className="flex flex-wrap gap-4">
@@ -122,7 +122,7 @@ const MealForm = () => {
             e.preventDefault();
           }}
           onDrop={handleDrop}
-          className="flex flex-col items-center justify-center w-80 p-1 min-h-40 bg-main-gray rounded-md mb-4"
+          className="flex flex-col items-center justify-center  w-full md:w-80 p-1 min-h-40 bg-main-gray rounded-md mb-4"
         >
           {data.image ? (
             <Image
@@ -145,7 +145,7 @@ const MealForm = () => {
       </div>
       <div className="space-y-3">
         <label className="font-semibold text-lg">{text("section")}</label>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap text-xs sm:text-sm md:text-base">
           {Array.from({ length: 5 }).map((_, i) => (
             <button
               type="button"
@@ -175,7 +175,7 @@ const MealForm = () => {
       </div>
       <div className="space-y-3">
         <label className="font-semibold text-lg">{text("meal_rank")}</label>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap text-xs sm:text-sm md:text-base">
           {Array.from({ length: 5 }).map((_, i) => (
             <button
               type="button"
@@ -205,7 +205,7 @@ const MealForm = () => {
       </div>
       <div className="space-y-3">
         <label className="font-semibold text-lg">{text("allergens")}</label>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap text-xs sm:text-sm md:text-base">
           {allergens.map((allergen) => (
             <button
               type="button"
@@ -241,7 +241,7 @@ const MealForm = () => {
         </div>
       </div>
 
-      <Button isRounded className="w-80">
+      <Button isRounded className=" w-full md:w-80">
         {text("add_meal")}
       </Button>
     </form>
