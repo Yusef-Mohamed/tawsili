@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <>
       <DashboardHeader />
-      <div className="flex">
+      <div className="flex dashboard">
         <DashboardSidebar />
         <main className="flex-1">
           <p className="py-2 bg-main-red mb-6 text-white text-lg text-center">
