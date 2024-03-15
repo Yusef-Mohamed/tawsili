@@ -32,7 +32,7 @@ const RootHeader: React.FC<RootHeaderProps> = ({ isStatic }) => {
     return () => {
       window.removeEventListener("scroll", checkScroll);
     };
-  }, []);
+  }, [isStatic]);
   return (
     <header
       style={{

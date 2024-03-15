@@ -37,7 +37,7 @@ const MealForm = () => {
     calories: "",
     price: "",
   });
-  const handleDrop = (e) => {
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
     setData({ ...data, image: file });
