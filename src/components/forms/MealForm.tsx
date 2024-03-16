@@ -118,7 +118,7 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
           <MyInput slug="remove_from_meal" data={data} setData={setData} />
           <MyInput slug="add_with_meal" data={data} setData={setData} />
 
-          {/* <div className="space-y-3">
+          <div className="space-y-3">
             <label className="font-semibold">{text("meal_image")}</label>
             <div
               onDragOver={(e) => {
@@ -242,7 +242,7 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
                 </button>
               ))}
             </div>
-          </div> */}
+          </div>
 
           <Button isRounded className=" w-full md:w-80">
             {text("add_meal")}
