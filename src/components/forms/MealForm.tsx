@@ -8,16 +8,19 @@ import Button from "../ui/button";
 import { FaCamera, FaPlus } from "react-icons/fa";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { IoMdRemove } from "react-icons/io";
 const allergens = [
   { slug: "dairy", value: "dairy" },
   { slug: "egg", value: "egg" },
   { slug: "gluten", value: "gluten" },
-  { slug: "peanut", value: "peanut" },
+  { slug: "nuts", value: "nuts" },
   { slug: "seafood", value: "seafood" },
   { slug: "sesame", value: "sesame" },
   { slug: "soy", value: "soy" },
   { slug: "sulfite", value: "sulfite" },
   { slug: "wheat", value: "wheat" },
+  { slug: "molluscs", value: "molluscs" },
+  { slug: "celery", value: "celery" },
 ];
 interface MealFormProps {
   type: string;
@@ -31,6 +34,11 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
     name: string;
     calories: string;
     price: string;
+    meal_type: string[];
+    meal_size: string[];
+    add_to_meal: string[];
+    remove_from_meal: string[];
+    add_with_meal: string[];
   }>({
     image: null,
     allergens: [],
@@ -39,6 +47,11 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
     name: "",
     calories: "",
     price: "",
+    meal_type: [],
+    meal_size: [],
+    add_to_meal: [],
+    remove_from_meal: [],
+    add_with_meal: [],
   });
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -99,45 +112,13 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
               />
             </div>
           </div>
-          <div className=" flex items-center gap-2">
-            <label className="font-semibold">
-              {text("meal_available_at_time")}
-            </label>
-            <button className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs">
-              <FaPlus />
-            </button>
-            <span className="px-4 py-0.5 text-white text-sm bg-main-red rounded-full">
-              {text("all_times")}
-            </span>
-          </div>
-          <div className=" flex items-center gap-2">
-            <label className="font-semibold">{text("meal_size")}</label>
-            <button className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs">
-              <FaPlus />
-            </button>
-            <span className="px-4 py-0.5 text-white text-sm bg-main-red rounded-full">
-              {text("large")}
-            </span>
-          </div>
-          <div className=" flex items-center gap-2">
-            <label className="font-semibold">{text("add_to_meal")}</label>
-            <button className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs">
-              <FaPlus />
-            </button>
-          </div>
-          <div className=" flex items-center gap-2">
-            <label className="font-semibold">{text("remove_from_meal")}</label>
-            <button className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs">
-              <FaPlus />
-            </button>
-          </div>
-          <div className=" flex items-center gap-2">
-            <label className="font-semibold">{text("add_with_meal")}</label>
-            <button className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs">
-              <FaPlus />
-            </button>
-          </div>
-          <div className="space-y-3">
+          <MyInput slug="meal_type" data={data} setData={setData} />
+          <MyInput slug="meal_size" data={data} setData={setData} />
+          <MyInput slug="add_to_meal" data={data} setData={setData} />
+          <MyInput slug="remove_from_meal" data={data} setData={setData} />
+          <MyInput slug="add_with_meal" data={data} setData={setData} />
+
+          {/* <div className="space-y-3">
             <label className="font-semibold">{text("meal_image")}</label>
             <div
               onDragOver={(e) => {
@@ -261,7 +242,7 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <Button isRounded className=" w-full md:w-80">
             {text("add_meal")}
@@ -271,5 +252,55 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
     </form>
   );
 };
-
+interface MyInputProps {
+  slug: string;
+  data: any;
+  setData: React.Dispatch<React.SetStateAction<any>>;
+}
+const MyInput: React.FC<MyInputProps> = ({ slug, data, setData }) => {
+  const text = useTranslations("mealForm");
+  const [input, setInput] = useState("");
+  const [isAdding, setIsAdding] = useState(false);
+  return (
+    <div className=" flex items-center gap-2">
+      <label className="font-semibold">{text(slug)}</label>
+      <button
+        type="button"
+        onClick={() => setIsAdding((prev) => !prev)}
+        className="w-5 text-white font-semibold bg-main-red rounded-xl h-5 flex items-center justify-center text-xs"
+      >
+        {isAdding ? <IoMdRemove /> : <FaPlus />}
+      </button>
+      {isAdding && (
+        <input
+          type="text"
+          value={input}
+          autoFocus
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              setData((prev: any) => ({
+                ...prev,
+                [slug]: [...prev[slug], input],
+              }));
+              setInput("");
+              setIsAdding(false);
+            }
+          }}
+          placeholder={text(slug)}
+          className={cn("w-48 py-1 px-6  bg-main-gray rounded-full")}
+        />
+      )}
+      {data[slug].map((item: string, i: number) => (
+        <span
+          key={i}
+          className="px-4 py-0.5 text-white text-sm bg-main-red rounded-full"
+        >
+          {item}
+        </span>
+      ))}
+    </div>
+  );
+};
 export default MealForm;
