@@ -30,7 +30,12 @@ const DashboardMobileMenu = () => {
         className="px-0 py-0 w-[90%] max-w-[90%] min-w-[90%]"
         onClose={() => setIsMenuOpen(false)}
       >
-        <DashboardSidebar isMenu />
+        <DashboardSidebar
+          isMenu
+          closeMenu={() => {
+            setIsMenuOpen(false);
+          }}
+        />
       </Sheet>
     </>
   );

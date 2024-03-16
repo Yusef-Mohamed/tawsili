@@ -109,7 +109,9 @@ const BranchesBody = () => {
           id: +new Date(),
         }}
         isModalOpen={isModalOpen}
-        onSubmit={() => {}}
+        onSubmit={() => {
+          setIsModalOpen(false);
+        }}
         setIsModalOpen={setIsModalOpen}
       />
     </>

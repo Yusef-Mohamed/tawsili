@@ -46,16 +46,14 @@ const MealsTimeBody = () => {
             ))}
           </ul>
           <Link
-            href="/dashboard/meals/new"
+            href="/dashboard/meals/section/new"
             className="mt-4 rounded-full w-fit px-6 py-3 block text-white font-semibold bg-main-red"
           >
             {text("add_section")}
           </Link>
         </div>
         <div className="lg:w-[350px] w-full py-4 px-6 rounded-xl border">
-          <h3 className="text-lg font-semibold mb-4">
-            {text("menu_sections")}
-          </h3>
+          <h3 className="text-lg font-semibold mb-4">{text("meals")}</h3>
           <ul className="space-y-2">
             {allTimes.map((time) => (
               <li key={time.slug}>
@@ -76,7 +74,7 @@ const MealsTimeBody = () => {
             ))}
           </ul>
           <Link
-            href="/dashboard/meals/new"
+            href="/dashboard/meals/meal/new"
             className="mt-4 rounded-full w-fit px-6 py-3 block text-white font-semibold bg-main-red"
           >
             {text("add_meal")}

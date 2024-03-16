@@ -204,13 +204,21 @@
     "time_name_placeholder": "اسم موعد العمل",
     "days": "الايام ",
     "time": "الوقت ",
-    "day": "السبت",
+    "day": "اليوم",
     "shift": "شيفت ",
     "open": "الافتتاح",
     "close": "الاغلاق",
     "add_shift": "إضافة شيفت",
     "save": "حفظ",
-    "save_shift": "حفظ الشيفت"
+    "save_shift": "حفظ الشيفت",
+    "add_day": "إضافة يوم",
+    "saturday": "السبت",
+    "sunday": "الأحد",
+    "monday": "الإثنين",
+    "tuesday": "الثلاثاء",
+    "wednesday": "الأربعاء",
+    "thursday": "الخميس",
+    "friday": "الجمعة"
   },
   "userContact": {
     "title": "تقديم علي الوظائف",
@@ -293,6 +301,8 @@
     "all_times": "جميع الاوقات",
     "add_to_meal": "إضافة الى الوجبة",
     "remove_from_meal": "حذف من الوجبة",
-    "add_with_meal": "إضافة مع الوجبة"
+    "add_with_meal": "إضافة مع الوجبة",
+    "section_name": "اسم القسم",
+    "add_section": "إضافة قسم"
   }
 }

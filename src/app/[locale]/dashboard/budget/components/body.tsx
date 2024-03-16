@@ -44,24 +44,36 @@ const BudgetBody = () => {
       <div className="p-6 rounded-md border flex items-end flex-wrap gap-4 mb-4">
         <div className="flex flex-col items-center justify-center">
           <label className="block font-semibold text-gray-600 text-lg">D</label>
-          <input
-            type="text"
-            className="px-4 py-3 bg-main-gray w-14 rounded-xl"
-          />
+          <select className="px-4 py-3 bg-main-gray w-20 rounded-xl">
+            <option value="">{text("all")}</option>
+            {[...Array(31)].map((_, index) => (
+              <option key={index} value={index + 1}>
+                {index + 1}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="flex flex-col items-center justify-center">
           <label className="block font-semibold text-gray-600 text-lg">M</label>
-          <input
-            type="text"
-            className="px-4 py-3 bg-main-gray w-14 rounded-xl"
-          />
+          <select className="px-4 py-3 bg-main-gray w-20 rounded-xl">
+            <option value="">{text("all")}</option>
+            {[...Array(12)].map((_, index) => (
+              <option key={index} value={index + 1}>
+                {index + 1}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="flex flex-col items-center justify-center">
           <label className="block font-semibold text-gray-600 text-lg">Y</label>
-          <input
-            type="text"
-            className="px-4 py-3 bg-main-gray w-14 rounded-xl"
-          />
+          <select className="px-4 py-3 bg-main-gray w-20 rounded-xl">
+            <option value="">{text("all")}</option>
+            {[...Array(40)].map((_, index) => (
+              <option key={index} value={index + 1 + 2000}>
+                {index + 1 + 2000}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="flex flex-col items-center justify-center">
           <label className="block font-semibold text-gray-600 text-lg">

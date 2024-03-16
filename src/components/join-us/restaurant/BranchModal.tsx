@@ -96,7 +96,12 @@ const BranchModal: React.FC<BranchModalProps> = ({
     >
       <div className="flex justify-between mb-4">
         <h1 className="text-xl font-bold">{text("please_select_location")}</h1>
-        <button className="w-6 h-6 rounded-lg text-lg   flex items-center justify-center border border-black">
+        <button
+          onClick={() => {
+            setIsModalOpen(false);
+          }}
+          className="w-6 h-6 rounded-lg text-lg   flex items-center justify-center border border-black"
+        >
           <IoCloseOutline />
         </button>
       </div>

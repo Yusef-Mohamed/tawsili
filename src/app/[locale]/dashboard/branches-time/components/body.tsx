@@ -4,6 +4,8 @@ import Button from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { MdDeleteForever } from "react-icons/md";
 import { RiTimer2Line } from "react-icons/ri";
 const allTimes = [
   {
@@ -23,18 +25,52 @@ const allTimes = [
     value: "eid_eladha_times",
   },
 ];
+const daysNames = [
+  {
+    slug: "saturday",
+    value: "saturday",
+  },
+  {
+    slug: "sunday",
+    value: "sunday",
+  },
+  {
+    slug: "monday",
+    value: "monday",
+  },
+  {
+    slug: "tuesday",
+    value: "tuesday",
+  },
+  {
+    slug: "wednesday",
+    value: "wednesday",
+  },
+  {
+    slug: "thursday",
+    value: "thursday",
+  },
+  {
+    slug: "friday",
+    value: "friday",
+  },
+];
+
 const BranchesTimeBody = () => {
   const text = useTranslations("branchesTime");
   const [selected, setSelected] = useState(allTimes[0].value);
   const [isAddingShift, setIsAddingShift] = useState(false);
-  const [shifts, setShifts] = useState([
+  const [days, setDays] = useState([
     {
-      open: "12:00",
-      close: "5:00",
+      date: "saturday",
+      shifts: [
+        {
+          open: "12:00",
+          close: "05:00",
+        },
+      ],
     },
   ]);
-  const [open, setOpen] = useState("12:00");
-  const [close, setClose] = useState("05:00");
   return (
     <>
       <h2 className="mb-4 text-2xl font-semibold">{text("title")}</h2>
@@ -67,7 +103,7 @@ const BranchesTimeBody = () => {
             {text("add_time")}
           </Button>
         </div>
-        <div className="lg:w-[400px] flex flex-col w-full py-4 px-6 rounded-xl border">
+        <div className="lg:w-[450px] flex flex-col w-full py-4 px-6 rounded-xl border">
           <div className="flex-grow">
             <h3 className="text-lg font-semibold mb-4">
               {text("add_time_title")}
@@ -77,93 +113,123 @@ const BranchesTimeBody = () => {
               className="rounded-md px-4 py-2 text-center w-full bg-main-gray"
               placeholder={text("time_name_placeholder")}
             />
-            <div className="grid sm:grid-cols-2">
-              <div className="my-4">
-                <span className="text-lg pe-4">{text("days")}</span>
-                <input
-                  className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
-                  type="date"
-                  value={new Date().toISOString().split("T")[0]}
-                  name=""
-                  id=""
-                />
-              </div>
-              <div className="my-4">
-                <span className="text-lg pe-4">{text("time")}</span>
-                <input
-                  className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
-                  type="time"
-                  value="12:00"
-                  name=""
-                  id=""
-                />
-              </div>
-            </div>
-
-            {shifts.map((shift, index) => (
-              <div key={index}>
-                <h4 className="px-4 py-2 rounded-md bg-main-gray w-fit text-main-red">
-                  {text("shift")} {index + 1}
-                </h4>
-                <div className="grid sm:grid-cols-2 sm:gap-2">
-                  <div className="flex my-4 gap-4 items-center">
-                    <span className="text-main-red">{text("open")}</span>
-                    <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
-                      {shift.open}{" "}
-                    </span>
+            {days.map((day, index) => (
+              <div key={index} className="border my-2 p-2 rounded-md">
+                <div className="my-4">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xl mb-2 mx-2">{text("day")}</h4>
+                    <button
+                      onClick={() => {
+                        const newDays = [...days];
+                        newDays.splice(index, 1);
+                        setDays(newDays);
+                      }}
+                      className="text-xl text-main-red"
+                    >
+                      <FaDeleteLeft />
+                    </button>
                   </div>
-                  <div className="flex my-4 gap-4 items-center">
-                    <span className="text-main-red">{text("close")}</span>
-                    <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
-                      {shift.close}{" "}
-                    </span>
-                  </div>
+                  <select
+                    value={day.date}
+                    onChange={(e) => {
+                      const newDays = [...days];
+                      newDays[index].date = e.target.value;
+                      setDays(newDays);
+                    }}
+                    className="px-4 py-2 rounded-md mt-2 font-semibold text-gray-600 bg-main-gray"
+                  >
+                    {daysNames.map((day) => (
+                      <option key={day.slug} value={day.value}>
+                        {text(day.slug)}
+                      </option>
+                    ))}
+                  </select>
                 </div>
+
+                {day.shifts.map((shift, shiftIndex) => (
+                  <div key={shiftIndex} className="mb-2 pb-2  border-b">
+                    <div className="flex items-center justify-between">
+                      <h4 className="px-4 py-2 rounded-md bg-main-gray w-fit text-main-red">
+                        {text("shift")} {shiftIndex + 1}
+                      </h4>
+                      <button
+                        onClick={() => {
+                          const newDays = [...days];
+                          newDays[index].shifts.splice(shiftIndex, 1);
+                          setDays(newDays);
+                        }}
+                        className="text-xl text-main-red"
+                      >
+                        <MdDeleteForever />{" "}
+                      </button>
+                    </div>
+                    <div className="grid sm:grid-cols-2 sm:gap-2">
+                      <div className="flex my-4 gap-4 items-center">
+                        <span className="text-main-red">{text("open")}</span>
+                        <input
+                          type="time"
+                          value={shift.open}
+                          onChange={(e) => {
+                            const newDays = [...days];
+                            newDays[index].shifts[shiftIndex].open =
+                              e.target.value;
+                            setDays(newDays);
+                          }}
+                          className="px-4 py-1 rounded-md bg-main-gray w-full text-center"
+                        />
+                      </div>
+                      <div className="flex my-4 gap-4 items-center">
+                        <span className="text-main-red">{text("close")}</span>
+                        <input
+                          type="time"
+                          value={shift.close}
+                          onChange={(e) => {
+                            const newDays = [...days];
+                            newDays[index].shifts[shiftIndex].close =
+                              e.target.value;
+                            setDays(newDays);
+                          }}
+                          className="px-4 py-1 rounded-md bg-main-gray w-full text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                <button
+                  onClick={() => {
+                    const newDays = [...days];
+                    newDays[index].shifts.push({
+                      open: "12:00",
+                      close: "05:00",
+                    });
+                    setDays(newDays);
+                  }}
+                  className="px-4 flex items-center gap-4 w-full py-2 rounded-md bg-main-gray justify-center  text-main-red"
+                >
+                  <span>+</span> {text("add_shift")}
+                </button>
               </div>
             ))}
+
             <button
-              onClick={() => setIsAddingShift(true)}
-              className="px-4 flex items-center gap-4 w-full py-2 rounded-md bg-main-gray justify-center  text-main-red"
+              onClick={() => {
+                setDays([
+                  ...days,
+                  {
+                    date: "saturday",
+                    shifts: [
+                      {
+                        open: "12:00",
+                        close: "05:00",
+                      },
+                    ],
+                  },
+                ]);
+              }}
+              className="px-4 mt-4 flex items-center gap-4 w-full py-2 rounded-md bg-main-gray justify-center  text-main-red"
             >
-              <span>+</span> {text("add_shift")}
+              <span>+</span> {text("add_day")}
             </button>
-            {isAddingShift && (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setShifts([...shifts, { open, close }]);
-                  setIsAddingShift(false);
-                }}
-              >
-                <div className="grid sm:grid-cols-2 sm:gap-2">
-                  <div className="flex my-4 gap-4 items-center">
-                    <span className="text-main-red">{text("open")}</span>
-                    <input
-                      className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
-                      type="time"
-                      value={open}
-                      onChange={(e) => setOpen(e.target.value)}
-                      name=""
-                      id=""
-                    />
-                  </div>
-                  <div className="flex my-4 gap-4 items-center">
-                    <span className="text-main-red">{text("close")}</span>
-                    <input
-                      className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
-                      type="time"
-                      value={close}
-                      onChange={(e) => setClose(e.target.value)}
-                      name=""
-                      id=""
-                    />
-                  </div>
-                </div>
-                <Button className="mt-4 py-1" isRounded>
-                  {text("save_shift")}
-                </Button>
-              </form>
-            )}
           </div>
           <Button className="mt-4 py-1" isRounded>
             {text("save")}
