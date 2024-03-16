@@ -6,27 +6,27 @@
     "main": "Home",
     "restaurants_menu": "Restaurants Menu",
     "our_app": "Our App",
-    "join_us_as_restaurant": "Join Us as Restaurant",
-    "join_us_as_driver": "Join Us as Driver",
+    "join_us_as_restaurant": "Join Us as a Restaurant",
+    "join_us_as_driver": "Join Us as a Driver",
     "contact_us": "Contact Us"
   },
   "hero": {
-    "title": "More than 20,000 restaurants. Order and your meal will be delivered to your doorstep."
+    "title": "More than 20,000 restaurants, order and your food will be delivered to your door"
   },
   "features": {
     "feat_1_title": "Personalized Delivery Experience",
-    "feat_2_title": "80% of Saudi Restaurants",
+    "feat_2_title": "80% of Restaurants in Saudi Arabia",
     "feat_3_title": "Secure Payments",
-    "feat_1_description": "Control your delivery experiences in real-time through open communication with your delivery company.",
-    "feat_2_description": "Access 80% of fast-food restaurants in the Kingdom at your fingertips. Enjoy the convenience of fast satisfaction as we provide you with countless fast-food options.",
-    "feat_3_description": "Experience the confidence of secure transactions. Our platform prioritizes the safety of your financial interactions, using the latest security measures to protect your payments."
+    "feat_1_description": "Control your delivery experiences in real-time through an open conversation with your delivery company.",
+    "feat_2_description": "Access 80% of fast-food restaurants in the kingdom at your fingertips. Enjoy the convenience of fast satisfaction as we offer you countless fast-food options.",
+    "feat_3_description": "Experience secure transaction confidence. Our platform prioritizes the safety of your financial interactions, using the latest security measures to protect your payments."
   },
   "restaurantsMenu": {
     "title": "Restaurants Menu"
   },
   "ourApp": {
     "title": "Mobile App",
-    "desc": "Download our delivery app on your mobile and order with a tap"
+    "desc": "Download the Delivery App on your mobile and order with a click"
   },
   "joinUs": {
     "title": "Join Us",
@@ -44,33 +44,33 @@
     "submit": "Submit"
   },
   "clientsReview": {
-    "title": "Client Reviews"
+    "title": "Customer Reviews"
   },
   "mainService": {
-    "desc": "Subscribe to the weekly newsletter to keep up with the latest products",
-    "title": "Subscribe to the newsletter now and get great discounts",
+    "desc": "Subscribe to the weekly newsletter to stay updated with the latest products",
+    "title": "Subscribe to the Newsletter now and get great discounts",
     "button": "Subscribe Now",
     "mail": "Email"
   },
   "joinUsPage": {
-    "as_restaurant": "Join as a Restaurant",
+    "as_restaurant": "Join Us as a Restaurant",
     "payment_info": "Payment Information",
-    "branches_info": "Branch Information",
+    "branches_info": "Branches Information",
     "public_info": "Public Information",
     "user_info": "User Information",
     "next": "Next",
-    "our_terms": "Our Dear Partner, Please note that Tawseeli application cannot cover the following locations:",
-    "no_hospitals": "Stores located inside hospitals cannot be added",
-    "no_military": "Closed areas such as residential complexes, military areas, and embassies",
-    "no_malls": "Stores located inside commercial malls cannot be added",
+    "our_terms": "Dear Partner, please note that Delivery App cannot cover the following locations:",
+    "no_hospitals": "Stores located in hospitals cannot be added",
+    "no_military": "Restricted areas such as residential compounds, military areas, and embassies",
+    "no_malls": "Stores located in shopping malls cannot be added",
     "please_select_location": "Please select your location from the map",
     "add": "Add",
     "actions": "Actions",
     "branch_name": "Branch Name",
     "branch_work_time": "Working Time",
     "save": "Save",
-    "long_error": "Error in longitude value",
-    "late_error": "Error in latitude value",
+    "long_error": "Longitude value error",
+    "late_error": "Latitude value error",
     "must_add_one_branch_at_least": "You must add at least one branch",
     "joining_done": "Registration Completed",
     "joining_done_desc": "We will contact you in less than 5 minutes and activate your account",
@@ -107,18 +107,21 @@
     "branch_name": "Branch Name",
     "from": "From",
     "to": "To",
-    "accounting_email": "Accounting and Financial Management Email",
+    "accounting_email": "Accounting and Finance Email",
     "bank_name": "Bank Name",
     "beneficiary_name": "Beneficiary Name",
     "IBANFile": "IBAN File",
-    "upload_pdf": "Upload PDF File",
+    "upload_pdf": "Upload PDF",
     "client": "Client",
     "login_to": "Login to",
     "enter_password": "Enter Password",
     "campaign_name": "Campaign Name",
     "campaign_cost": "Campaign Cost",
     "target_cites": "Target Cities",
-    "campaign_status": "Campaign Status"
+    "campaign_status": "Campaign Status",
+    "mealName": "Meal Name",
+    "restaurantName": "Restaurant Name",
+    "select": "Select"
   },
   "loginPage": {
     "remember_me": "Remember Me",
@@ -142,16 +145,16 @@
     "coming_soon": "Coming soon... Developing a reward system for restaurant customers"
   },
   "analysis": {
-    "title": "Analysis and Statistics",
-    "branches_count": "Number of Branches Today",
+    "title": "Analytics and Statistics",
+    "branches_count": "Today's Branches Count",
     "branch": "Branch",
-    "orders_count": "Orders Count Today",
-    "net_sales": "Net Sales Today",
-    "compensation": "Compensations Today",
+    "orders_count": "Today's Orders Count",
+    "net_sales": "Today's Net Sales",
+    "compensation": "Today's Compensation",
     "real": "Real",
     "order": "Order",
     "weakly_net_profit": "Weekly Net Profit",
-    "net_profit": "Net Profit in Saudi Riyals",
+    "net_profit": "Net Profit in Saudi Riyal",
     "saturday": "Saturday",
     "sunday": "Sunday",
     "monday": "Monday",
@@ -161,19 +164,23 @@
     "friday": "Friday"
   },
   "advertisements": {
-    "restaurant_adds": "Restaurant Advertisements",
-    "adds_campaigns": "Advertisement Campaigns",
-    "meals_adds": "Meal Advertisements",
-    "meals_adds_paragraph": "Restaurant meal advertisements",
-    "restaurant_adds_paragraph": "Restaurant advertisements",
+    "restaurant_adds": "Restaurant Ads",
+    "adds_campaigns": "Ads Campaigns",
+    "meals_adds": "Meals Ads",
+    "meals_adds_paragraph": "Restaurant's meals advertisements",
+    "restaurant_adds_paragraph": "Restaurant's advertisements",
     "campaign_name": "Campaign Name",
+    "logout": "Logout",
     "campaign_cost": "Campaign Cost",
     "target_cites": "Target Cities",
     "campaign_status": "Campaign Status",
     "actions": "Actions",
     "make_new_campaign": "Create New Campaign",
-    "add_title": "Add Campaign"
+    "add_title": "Add Campaign",
+    "new_meal_campaign": "New Meal Campaign",
+    "new_restaurant_campaign": "New Restaurant Campaign"
   },
+
   "branches": {
     "title": "Branches",
     "add_branch": "Add Branch",
@@ -193,33 +200,34 @@
     "eid_elfitr_times": "Eid Al-Fitr Times",
     "ramadan_times": "Ramadan Times",
     "main_times": "Main Times",
-    "add_time_title": "Add Working Time",
-    "time_name_placeholder": "Working Time Name",
+    "add_time_title": "Add Work Time",
+    "time_name_placeholder": "Work Time Name",
     "days": "Days",
     "time": "Time",
     "day": "Saturday",
-    "shift": "Shift 1",
+    "shift": "Shift",
     "open": "Open",
     "close": "Close",
     "add_shift": "Add Shift",
-    "save": "Save"
+    "save": "Save",
+    "save_shift": "Save Shift"
   },
   "userContact": {
     "title": "Apply for Jobs",
     "name": "Name",
     "name_placeholder": "Full Name",
     "varInput": "Languages",
-    "varInput_placeholder": "Languages you master",
+    "varInput_placeholder": "Languages you are proficient in",
     "phone": "Contact Number",
     "phone_placeholder": "Contact Number",
     "email": "Email",
     "email_placeholder": "Email",
     "message": "What can you offer us?",
-    "message_placeholder": "What can you offer to Tawseeli Company? Why are you?",
+    "message_placeholder": "What can you offer Delivery App? Why are you the right fit?",
     "send": "Send"
   },
   "companyContact": {
-    "title": "Contact for Companies",
+    "title": "Contact Companies",
     "name": "Company Name",
     "name_placeholder": "Full Name",
     "varInput": "Company Representative",
@@ -229,7 +237,7 @@
     "email": "Email",
     "email_placeholder": "Email",
     "message": "Your Message",
-    "message_placeholder": "Write down the services that your company can provide to be sent to the specialist",
+    "message_placeholder": "Write the services your company can offer to be sent to the specialist",
     "send": "Send"
   },
   "budget": {
@@ -243,7 +251,7 @@
     "branches": "Branches",
     "currency": "Currency",
     "sales": "Sales",
-    "compensation": "Compensations",
+    "compensation": "Compensation",
     "net_sales": "Net Sales",
     "delivery_cost": "Delivery Cost",
     "delivery_cost_tax": "Delivery Cost Tax",
@@ -257,10 +265,11 @@
     "drinks": "Drinks",
     "desserts": "Desserts",
     "meals": "Meals",
-    "add_meal": "Add Meal"
+    "add_meal": "Add Meal",
+    "add_section": "Add Section"
   },
   "mealForm": {
-    "allergens": "Meal Allergens",
+    "allergens": "Allergens in the meal",
     "dairy": "Dairy 🥛",
     "egg": "Egg 🥚",
     "gluten": "Gluten 🌾",
@@ -280,7 +289,7 @@
     "calories": "Calories",
     "meal_size": "Meal Size",
     "large": "Large",
-    "meal_available_at_time": "Meal Availability Times in a Day",
+    "meal_available_at_time": "Meal Availability Times in the Day",
     "all_times": "All Times",
     "add_to_meal": "Add to Meal",
     "remove_from_meal": "Remove from Meal",

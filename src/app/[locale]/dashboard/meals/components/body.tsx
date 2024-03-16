@@ -29,7 +29,7 @@ const MealsTimeBody = () => {
           <ul className="space-y-2">
             {allTimes.map((time) => (
               <li key={time.slug}>
-                <button className="w-full flex items-center justify-between gap-4 text-start px-4 py-3 rounded-md bg-main-gray font-semibold">
+                <div className="w-full flex items-center justify-between gap-4 text-start px-4 py-3 rounded-md bg-main-gray font-semibold">
                   <div className="flex items-center gap-4">
                     {text(time.slug)}
                   </div>
@@ -41,7 +41,7 @@ const MealsTimeBody = () => {
                       <FaEdit />
                     </button>
                   </div>
-                </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -49,7 +49,7 @@ const MealsTimeBody = () => {
             href="/dashboard/meals/new"
             className="mt-4 rounded-full w-fit px-6 py-3 block text-white font-semibold bg-main-red"
           >
-            {text("add_meal")}
+            {text("add_section")}
           </Link>
         </div>
         <div className="lg:w-[350px] w-full py-4 px-6 rounded-xl border">
@@ -59,7 +59,7 @@ const MealsTimeBody = () => {
           <ul className="space-y-2">
             {allTimes.map((time) => (
               <li key={time.slug}>
-                <button className="w-full flex items-center justify-between gap-4 text-start px-4 py-3 rounded-md bg-main-gray font-semibold">
+                <div className="w-full flex items-center justify-between gap-4 text-start px-4 py-3 rounded-md bg-main-gray font-semibold">
                   <div className="flex items-center gap-4">
                     {text(time.slug)}
                   </div>
@@ -71,7 +71,7 @@ const MealsTimeBody = () => {
                       <FaEdit />
                     </button>
                   </div>
-                </button>
+                </div>
               </li>
             ))}
           </ul>

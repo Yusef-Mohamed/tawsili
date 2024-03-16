@@ -10,11 +10,15 @@ const options = [
     name: "meals_adds",
     value: "meals_adds",
     selectedParagraph: "meals_adds_paragraph",
+    create_slug: "new_meal_campaign",
+    to: "/dashboard/advertisements/meal",
   },
   {
     name: "restaurant_adds",
     value: "restaurant_adds",
     selectedParagraph: "restaurant_adds_paragraph",
+    create_slug: "new_restaurant_campaign",
+    to: "/dashboard/advertisements/restaurant",
   },
 ];
 const campaigns = [
@@ -33,28 +37,30 @@ const AddsBody = () => {
       <h2 className="text-2xl font-semibold">{text("restaurant_adds")}</h2>
       <div className="flex my-8 gap-4 sm:gap-8">
         {options.map((option, index) => (
-          <button
-            key={index}
-            className={cn(
-              "border px-4 sm:px-8 py-2 sm:py-4 sm:w-auto w-1/2 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all",
-              {
-                "text-main-red font-semibold": selected.value === option.value,
-                "bg-gray-100 text-gray-600": selected.value !== option.value,
-              }
-            )}
-            onClick={() => setSelected(option)}
-          >
-            {text(option.name)}
-          </button>
+          <div key={index} className="flex flex-col gap-2">
+            <button
+              className={cn(
+                "border px-4 sm:px-8 py-2 sm:py-4 sm:w-auto w-1/2 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all",
+                {
+                  "text-main-red font-semibold":
+                    selected.value === option.value,
+                  "bg-gray-100 text-gray-600": selected.value !== option.value,
+                }
+              )}
+              onClick={() => setSelected(option)}
+            >
+              {text(option.name)}
+            </button>
+            <Link
+              href={option.to + "/new"}
+              className={cn(
+                "border  sm:w-auto w-1/2 rounded-md bg-main-red text-white text-center py-1 px-4"
+              )}
+            >
+              {text(option.create_slug)}
+            </Link>
+          </div>
         ))}
-        <Link
-          href={"/dashboard/advertisements/new"}
-          className={cn(
-            "border px-4 sm:px-8 py-2 sm:py-4 sm:w-auto w-1/2 rounded-md hover:text-main-red hover:bg-transparent hover:border-main-red transition-all"
-          )}
-        >
-          {text("make_new_campaign")}
-        </Link>
       </div>
       <h2 className="mt-4 text-2xl font-semibold">{text(selected.name)}</h2>
       <p className="my-4">{text(selected.selectedParagraph)}</p>
@@ -76,16 +82,22 @@ const AddsBody = () => {
                 <td>{campaign.cost}</td>
                 <td>{campaign.cites}</td>
                 <td>
-                  <Switch checked={true} onChange={() => {}} />
+                  <div className="flex items-center justify-center">
+                    <Switch checked={true} onChange={() => {}} />
+                  </div>
                 </td>
                 <td>
                   <div>
                     <button className="text-main-red" type="button">
                       <FaRegTrashAlt />
                     </button>
-                    <button className="text-green-600" type="button">
+                    <Link
+                      href={selected.to + "/edit"}
+                      className="text-green-600"
+                      type="button"
+                    >
                       <FaEdit />
-                    </button>
+                    </Link>
                   </div>
                 </td>
               </tr>

@@ -9,6 +9,12 @@ const BranchModal = dynamic(
     ssr: false,
   }
 );
+const ShowPointInMapModal = dynamic(
+  () => import("@/components/ShowPointInMapModal").then((res) => res.default),
+  {
+    ssr: false,
+  }
+);
 import Button from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -44,6 +50,7 @@ const branches = [
 const BranchesBody = () => {
   const text = useTranslations("branches");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModalOpen, setShowModalOpen] = useState(false);
   return (
     <>
       <h2 className="mb-4 text-2xl font-semibold">{text("title")}</h2>
@@ -60,7 +67,14 @@ const BranchesBody = () => {
             {branches.map((campaign, index) => (
               <tr key={index}>
                 <td>{campaign.name}</td>
-                <td>{campaign.place}</td>
+                <td
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setShowModalOpen(true);
+                  }}
+                >
+                  {campaign.place}
+                </td>
                 <td>
                   <div>
                     <button className="text-main-red" type="button">
@@ -79,6 +93,11 @@ const BranchesBody = () => {
       <Button onClick={() => setIsModalOpen(true)} className="mt-4" isRounded>
         {text("add_branch")}
       </Button>
+      <ShowPointInMapModal
+        point={[26, 44]}
+        isOpen={showModalOpen}
+        setIsOpen={setShowModalOpen}
+      />
       <BranchModal
         branch={{
           name: "",

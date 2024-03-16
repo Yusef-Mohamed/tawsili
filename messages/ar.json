@@ -118,7 +118,10 @@
     "campaign_name": "اسم الحملة",
     "campaign_cost": "تكلفة الحملة",
     "target_cites": "المدن المستهدفة",
-    "campaign_status": "حالة الحملة"
+    "campaign_status": "حالة الحملة",
+    "mealName": "اسم الوجبة",
+    "restaurantName": "اسم المطعم",
+    "select": "اختر"
   },
   "loginPage": {
     "remember_me": "تذكرني مرة آخرى",
@@ -167,13 +170,17 @@
     "meals_adds_paragraph": "إعلانات الوجبات الخاصة بالمطعم",
     "restaurant_adds_paragraph": "إعلانات المطعم الخاصة بالمطعم",
     "campaign_name": "اسم الحملة",
+    "logout": "تسجيل الخروج",
     "campaign_cost": "تكلفة الحملة",
     "target_cites": "المدن المستهدفة",
     "campaign_status": "حالة الحملة",
     "actions": "الإجراءات",
     "make_new_campaign": "إنشاء حملة جديدة",
-    "add_title": "إضافة حملة"
+    "add_title": "إضافة حملة",
+    "new_meal_campaign": "حملة جديدة للوجبات",
+    "new_restaurant_campaign": "حملة جديدة للمطاعم"
   },
+
   "branches": {
     "title": "الفروع",
     "add_branch": "إضافة فرع",
@@ -196,13 +203,14 @@
     "add_time_title": "إضافة موعد العمل",
     "time_name_placeholder": "اسم موعد العمل",
     "days": "الايام ",
-    "time": "الايام ",
+    "time": "الوقت ",
     "day": "السبت",
-    "shift": "شيفت 1",
+    "shift": "شيفت ",
     "open": "الافتتاح",
     "close": "الاغلاق",
     "add_shift": "إضافة شيفت",
-    "save": "حفظ"
+    "save": "حفظ",
+    "save_shift": "حفظ الشيفت"
   },
   "userContact": {
     "title": "تقديم علي الوظائف",
@@ -257,7 +265,8 @@
     "drinks": "المشروبات",
     "desserts": "الحلويات",
     "meals": "الوجبات",
-    "add_meal": "إضافة وجبة"
+    "add_meal": "إضافة وجبة",
+    "add_section": "إضافة قسم"
   },
   "mealForm": {
     "allergens": "مسببات الحساسية الموجوده في الوجبة",

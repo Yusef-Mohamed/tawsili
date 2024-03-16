@@ -26,6 +26,15 @@ const allTimes = [
 const BranchesTimeBody = () => {
   const text = useTranslations("branchesTime");
   const [selected, setSelected] = useState(allTimes[0].value);
+  const [isAddingShift, setIsAddingShift] = useState(false);
+  const [shifts, setShifts] = useState([
+    {
+      open: "12:00",
+      close: "5:00",
+    },
+  ]);
+  const [open, setOpen] = useState("12:00");
+  const [close, setClose] = useState("05:00");
   return (
     <>
       <h2 className="mb-4 text-2xl font-semibold">{text("title")}</h2>
@@ -68,38 +77,93 @@ const BranchesTimeBody = () => {
               className="rounded-md px-4 py-2 text-center w-full bg-main-gray"
               placeholder={text("time_name_placeholder")}
             />
-            <div className="grid grid-cols-2">
+            <div className="grid sm:grid-cols-2">
               <div className="my-4">
                 <span className="text-lg pe-4">{text("days")}</span>
-                <span className="px-4 py-2 rounded-md text-gray-600 bg-main-gray">
-                  {text("day")}
-                </span>
+                <input
+                  className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
+                  type="date"
+                  value={new Date().toISOString().split("T")[0]}
+                  name=""
+                  id=""
+                />
               </div>
               <div className="my-4">
                 <span className="text-lg pe-4">{text("time")}</span>
-                <span className="px-4 py-2 rounded-md text-gray-600 bg-main-gray">
-                  12AM-03AM
-                </span>
+                <input
+                  className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
+                  type="time"
+                  value="12:00"
+                  name=""
+                  id=""
+                />
               </div>
             </div>
-            <h4 className="px-4 py-2 rounded-md bg-main-gray w-fit text-main-red">
-              {text("shift")}
-            </h4>
-            <div className="flex my-4 gap-4 items-center">
-              <span className="text-main-red">{text("open")}</span>
-              <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
-                12:00
-              </span>
-            </div>
-            <div className="flex my-4 gap-4 items-center">
-              <span className="text-main-red">{text("close")}</span>
-              <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
-                12:00
-              </span>
-            </div>
-            <button className="px-4 flex items-center gap-4 w-full py-2 rounded-md bg-main-gray justify-center  text-main-red">
+
+            {shifts.map((shift, index) => (
+              <div key={index}>
+                <h4 className="px-4 py-2 rounded-md bg-main-gray w-fit text-main-red">
+                  {text("shift")} {index + 1}
+                </h4>
+                <div className="grid sm:grid-cols-2 sm:gap-2">
+                  <div className="flex my-4 gap-4 items-center">
+                    <span className="text-main-red">{text("open")}</span>
+                    <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
+                      {shift.open}{" "}
+                    </span>
+                  </div>
+                  <div className="flex my-4 gap-4 items-center">
+                    <span className="text-main-red">{text("close")}</span>
+                    <span className="px-4 py-1 rounded-md bg-main-gray w-full text-center">
+                      {shift.close}{" "}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <button
+              onClick={() => setIsAddingShift(true)}
+              className="px-4 flex items-center gap-4 w-full py-2 rounded-md bg-main-gray justify-center  text-main-red"
+            >
               <span>+</span> {text("add_shift")}
             </button>
+            {isAddingShift && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setShifts([...shifts, { open, close }]);
+                  setIsAddingShift(false);
+                }}
+              >
+                <div className="grid sm:grid-cols-2 sm:gap-2">
+                  <div className="flex my-4 gap-4 items-center">
+                    <span className="text-main-red">{text("open")}</span>
+                    <input
+                      className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
+                      type="time"
+                      value={open}
+                      onChange={(e) => setOpen(e.target.value)}
+                      name=""
+                      id=""
+                    />
+                  </div>
+                  <div className="flex my-4 gap-4 items-center">
+                    <span className="text-main-red">{text("close")}</span>
+                    <input
+                      className="px-4 py-2 rounded-md text-gray-600 bg-main-gray"
+                      type="time"
+                      value={close}
+                      onChange={(e) => setClose(e.target.value)}
+                      name=""
+                      id=""
+                    />
+                  </div>
+                </div>
+                <Button className="mt-4 py-1" isRounded>
+                  {text("save_shift")}
+                </Button>
+              </form>
+            )}
           </div>
           <Button className="mt-4 py-1" isRounded>
             {text("save")}
