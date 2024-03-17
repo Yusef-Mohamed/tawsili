@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Switch from "../ui/switch";
 import Button from "../ui/button";
-import { FaCamera, FaPlus } from "react-icons/fa";
+import { FaCamera, FaCheck, FaPlus } from "react-icons/fa";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { IoMdRemove } from "react-icons/io";
@@ -34,11 +34,23 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
     name: string;
     calories: string;
     price: string;
-    meal_type: string[];
-    meal_size: string[];
-    add_to_meal: string[];
+    meal_type: {
+      name: string;
+      price: string;
+    }[];
+    meal_size: {
+      name: string;
+      price: string;
+    }[];
+    add_to_meal: {
+      name: string;
+      price: string;
+    }[];
     remove_from_meal: string[];
-    add_with_meal: string[];
+    add_with_meal: {
+      name: string;
+      price: string;
+    }[];
   }>({
     image: null,
     allergens: [],
@@ -60,7 +72,13 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
   };
   const text = useTranslations("mealForm");
   return (
-    <form className="p-6 m-6 border rounded-md space-y-4">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log(data);
+      }}
+      className="p-6 m-6 border rounded-md space-y-4"
+    >
       {type === "section" && (
         <>
           <div className="space-y-3">
@@ -112,11 +130,31 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
               />
             </div>
           </div>
-          <MyInput slug="meal_type" data={data} setData={setData} />
-          <MyInput slug="meal_size" data={data} setData={setData} />
-          <MyInput slug="add_to_meal" data={data} setData={setData} />
+          <MyInput
+            slug="meal_type"
+            withPrice={true}
+            data={data}
+            setData={setData}
+          />
+          <MyInput
+            slug="meal_size"
+            withPrice={true}
+            data={data}
+            setData={setData}
+          />
+          <MyInput
+            slug="add_to_meal"
+            withPrice={true}
+            data={data}
+            setData={setData}
+          />
           <MyInput slug="remove_from_meal" data={data} setData={setData} />
-          <MyInput slug="add_with_meal" data={data} setData={setData} />
+          <MyInput
+            slug="add_with_meal"
+            withPrice={true}
+            data={data}
+            setData={setData}
+          />
 
           <div className="space-y-3">
             <label className="font-semibold">{text("meal_image")}</label>
@@ -255,14 +293,21 @@ const MealForm: React.FC<MealFormProps> = ({ type }) => {
 interface MyInputProps {
   slug: string;
   data: any;
+  withPrice?: boolean;
   setData: React.Dispatch<React.SetStateAction<any>>;
 }
-const MyInput: React.FC<MyInputProps> = ({ slug, data, setData }) => {
+const MyInput: React.FC<MyInputProps> = ({
+  slug,
+  data,
+  setData,
+  withPrice,
+}) => {
   const text = useTranslations("mealForm");
   const [input, setInput] = useState("");
+  const [price, setPrice] = useState("100");
   const [isAdding, setIsAdding] = useState(false);
   return (
-    <div className=" flex items-center gap-2">
+    <div className=" flex items-center gap-2 flex-wrap">
       <label className="font-semibold">{text(slug)}</label>
       <button
         type="button"
@@ -271,35 +316,60 @@ const MyInput: React.FC<MyInputProps> = ({ slug, data, setData }) => {
       >
         {isAdding ? <IoMdRemove /> : <FaPlus />}
       </button>
-      {isAdding && (
-        <input
-          type="text"
-          value={input}
-          autoFocus
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              setData((prev: any) => ({
-                ...prev,
-                [slug]: [...prev[slug], input],
-              }));
-              setInput("");
-              setIsAdding(false);
-            }
-          }}
-          placeholder={text(slug)}
-          className={cn("w-48 py-1 px-6  bg-main-gray rounded-full")}
-        />
-      )}
       {data[slug].map((item: string, i: number) => (
         <span
           key={i}
           className="px-4 py-0.5 text-white text-sm bg-main-red rounded-full"
         >
-          {item}
+          {withPrice ? data[slug][i].name : data[slug][i]}
+          {withPrice && ` - ${data[slug][i].price}`}
         </span>
       ))}
+      {isAdding && (
+        <div className="flex gap-2 items-center flex-wrap">
+          <input
+            type="text"
+            value={input}
+            autoFocus
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={text(slug)}
+            className={cn("w-48 py-1 px-6  bg-main-gray")}
+          />
+          {withPrice && (
+            <input
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              className={cn("w-48 sm:w-16 py-1 px-1  bg-main-gray")}
+            />
+          )}
+
+          <button
+            className="bg-main-red aspect-square p-1.5 text-white block rounded-full"
+            type="button"
+            onClick={(e) => {
+              console.log(0);
+              e.preventDefault();
+              if (withPrice) {
+                setData((prev: any) => ({
+                  ...prev,
+                  [slug]: [...prev[slug], { name: input, price: price }],
+                }));
+              } else {
+                setData((prev: any) => ({
+                  ...prev,
+                  [slug]: [...prev[slug], input],
+                }));
+              }
+              setInput("");
+              setPrice("100");
+              setIsAdding(false);
+            }}
+          >
+            <FaCheck />{" "}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
